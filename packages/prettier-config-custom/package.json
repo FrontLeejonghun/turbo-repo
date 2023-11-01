@@ -1,0 +1,14 @@
+{
+  "name": "prettier-config-custom",
+  "license": "MIT",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "prettier": "^2.4.1",
+    "typescript": "5.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
