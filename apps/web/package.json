@@ -22,7 +22,6 @@
     "eslint-config-custom": "*",
     "prettier-config-custom": "*",
     "tsconfig": "*",
-    "next-config-custom": "*",
     "typescript": "5.0.4"
   }
 }
