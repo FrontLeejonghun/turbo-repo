@@ -1,90 +1,102 @@
-
 module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       impliedStrict: true,
-      jsx: true
-    }
+      jsx: true,
+    },
   },
-  ignorePatterns: ['node_modules/', 'dist/'],
+  ignorePatterns: ["node_modules/", "dist/"],
   plugins: [
-    'react',
-    '@typescript-eslint',
-    '@emotion',
-    'eslint-plugin-simple-import-sort',
+    "react",
+    "@typescript-eslint",
+    "@emotion",
+    "eslint-plugin-simple-import-sort",
+    "prettier",
   ],
   extends: [
-    'eslint:recommended',
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:@next/next/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:prettier/recommended',
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier",
   ],
   globals: {
     React: true,
     JSX: true,
   },
-
   rules: {
-    '@emotion/jsx-import': 'error',
-    '@emotion/styled-import': 'error',
-    'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
-    'react/jsx-props-no-spreading': 'off',
-    'react/self-closing-comp': 'error',
-    'import/extensions': [
-      'warn',
-      'ignorePackages',
+    "prettier/prettier": [
+      "error",
       {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
+        singleQuote: true,
+        semi: true,
+        useTabs: false,
+        tabWidth: 2,
+        trailingComma: "all",
+        printWidth: 80,
+        bracketSpacing: true,
+        arrowParens: "avoid",
       },
     ],
-    'react/require-default-props': 'off',
-    'react/button-has-type': 'off',
-    'no-plusplus': 'off',
-    'no-shadow': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
+    "@emotion/jsx-import": "error",
+    "@emotion/styled-import": "error",
+    "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/self-closing-comp": "error",
+    "import/extensions": [
+      "warn",
+      "ignorePackages",
       {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_',
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
       },
     ],
-    'no-console': [
-      'warn',
+    "react/require-default-props": "off",
+    "react/button-has-type": "off",
+    "no-plusplus": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
       {
-        allow: ['warn', 'error'],
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
       },
     ],
-    'import/order': 'off',
-    'simple-import-sort/imports': [
-      'error',
+    "no-console": [
+      "warn",
+      {
+        allow: ["warn", "error"],
+      },
+    ],
+    "import/order": "off",
+    "simple-import-sort/imports": [
+      "error",
       {
         groups: [
           // Packages `react` related packages come first.
-          ['^react', '^@?\\w'],
+          ["^react", "^@?\\w"],
           // Internal packages.
-          ['^(@|components)(/.*|$)'],
+          ["^(@|components)(/.*|$)"],
           // Side effect imports.
-          ['^\\u0000'],
+          ["^\\u0000"],
           // Parent imports. Put `..` last.
-          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
           // Other relative imports. Put same-folder imports and `.` last.
-          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
           // Style imports.
-          ['^.+\\.?(css)$'],
+          ["^.+\\.?(css)$"],
         ],
       },
     ],
-    'simple-import-sort/exports': 'error',
-    'react/jsx-sort-props': [
+    "simple-import-sort/exports": "error",
+    "react/jsx-sort-props": [
       2,
       {
         callbacksLast: true,

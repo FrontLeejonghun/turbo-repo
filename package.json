@@ -9,7 +9,6 @@
   "devDependencies": {
     "turbo": "latest",
     "eslint-config-custom": "*",
-    "prettier-config-custom": "*",
     "tsconfig": "*",
     "@next/bundle-analyzer": "^13.4.6"
   },
